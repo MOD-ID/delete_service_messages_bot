@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  bot:
+    container_name: delete_service_messages_bot
+    build:
+      context: .
+    restart: unless-stopped
+    command: python bot.py
+
