@@ -1,5 +1,6 @@
 import asyncio
 import logging
+import os
 
 from aiogram import Bot, Dispatcher
 from aiogram.dispatcher.filters import ChatTypeFilter
@@ -7,7 +8,8 @@ from aiogram.types import Message, ChatType, ContentType, AllowedUpdates
 from aiogram.utils.exceptions import RetryAfter, MessageCantBeDeleted
 
 log = logging.getLogger(__name__)
-bot = Bot('BOT_TOKEN')
+BOT_TOKEN = os.getenv('BOT_TOKEN')
+bot = Bot(BOT_TOKEN)
 dp = Dispatcher(bot)
 
 
